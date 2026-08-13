@@ -1,47 +1,44 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ExerciciosSenac {
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-        int opcao;
-
-        do {
-            System.out.println("\n================ MENU DE OPÇÕES ================");
+public class AtividadePOO {
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+		int opcao;
+		
+		do {
+			System.out.println("\n================ MENU DE OPÇÕES ================");
             System.out.println("1 - Sistema de Aumento de Salário");
             System.out.println("2 - Determinar Maior e Menor Valor (Encerra com 0)");
             System.out.println("3 - Estatísticas de Idade e Sexo (Encerra com 'N')");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-
-            switch (opcao) {
-                case 1:
-                    executarAumentoSalario(scanner);
-                    break;
-                case 2:
-                    executarMaiorEMenorValor(scanner);
-                    break;
-                case 3:
-                    executarEstatisticasGrupo(scanner);
-                    break;
-                case 0:
-                    System.out.println("Saindo do programa...");
-                    break;
-                default:
-                    System.out.println("Opção inválida! Tente novamente.");
+            
+            switch(opcao) {
+            case 1:
+                executarAumentoSalario(scanner);
+                break;
+            case 2:
+                executarMaiorEMenorValor(scanner);
+                break;
+            case 3:
+                executarEstatisticasGrupo(scanner);
+                break;
+            case 0:
+                System.out.println("Saindo do programa...");
+                break;
+            default:
+                System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 0);
-
-        scanner.close();
-    }
-
-    // =========================================================================
-    // ATIVIDADE ORIGINAL: Aumento de Salário
-    // =========================================================================
-    public static void executarAumentoSalario(Scanner scanner) {
-        System.out.println("\n--- [1] Sistema de Aumento de Salário ---");
+		}while(opcao!=0);
+		scanner.close();
+	}
+	
+	// ATIVIDADE: AUMENTO DE SALARIO
+	public static void executarAumentoSalario(Scanner scanner) {
+		System.out.println("\n--- [1] Sistema de Aumento de Salário ---");
         System.out.print("Digite o salário atual do colaborador: R$ ");
         double salario = scanner.nextDouble();
 
@@ -53,8 +50,7 @@ public class ExerciciosSenac {
         System.out.printf("Percentual de Aumento: %.2f%%%n", percentual);
         System.out.printf("Novo Salário: R$ %.2f%n", (salario + aumento));
     }
-
-    public static double calcularAumento(double salarioAtual) {
+	public static double calcularAumento(double salarioAtual) {
         if (salarioAtual <= 1000.00) {
             return 193.56;
         } else if (salarioAtual <= 2000.00) {
@@ -63,11 +59,8 @@ public class ExerciciosSenac {
             return 127.89;
         }
     }
-
-    // =========================================================================
-    // EXERCÍCIO 1 DA IMAGEM: Menor e Maior valor (encerra digitando 0)
-    // =========================================================================
-    public static void executarMaiorEMenorValor(Scanner scanner) {
+	// ATIVIDADE: MENOR E MAIOR VALOR
+	public static void executarMaiorEMenorValor(Scanner scanner) {
         System.out.println("\n--- [2] Maior e Menor Valor de um Conjunto ---");
         System.out.println("Digite números inteiros e positivos (Digite 0 para encerrar):");
 
@@ -108,11 +101,8 @@ public class ExerciciosSenac {
             System.out.println("Nenhum valor válido foi digitado.");
         }
     }
-
-    // =========================================================================
-    // EXERCÍCIO 2 DA IMAGEM: Idade e Sexo de um grupo (encerra com sexo 'N')
-    // =========================================================================
-    public static void executarEstatisticasGrupo(Scanner scanner) {
+	// ATIVIDADE: IDADE E SEXO DE UM GRUPO
+	public static void executarEstatisticasGrupo(Scanner scanner) {
         System.out.println("\n--- [3] Estatísticas de Grupo (Idade e Sexo) ---");
 
         int totalPessoas = 0;
